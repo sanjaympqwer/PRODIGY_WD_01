@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Interactive Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #987777;
+      min-height: 200vh; 
+    }
+
+    
+    header {
+      position: fixed;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      
+    }
+
+    header.scrolled {
+      background-color: #580b0b;
+     
+    
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #080202e7;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 10px 15px;
+      border-radius: 5px;
+     
+    }
+
+    nav a::after {
+     position: relative;
+      
+    }
+
+    .content {
+      padding: 120px 40px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 20px;
+      color: #666;
+    }
+    .footer{
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="mainHeader">
+    <div class="logo">MySite</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <footer class="footer">
+    This is an example provided
+  </footer>
+
+  <div class="content">
+    <h1>Welcome to MySite</h1>
+    <p>Scroll down to see the interactive menu in action!</p>
+  </div>
+
+  <script>
+    const header = document.getElementById("mainHeader");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
